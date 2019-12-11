@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Movie Search</h1>
+
+    <!-- Movies will get dumped here -->
+    <div id="buttons-view" class="buttons-view"></div>
+
+    <form id="movie-form">
+      <label for="movie-input">Add a Movie, Yo!</label>
+      <input type="text" id="movie-input"><br>
+
+      <!-- Button triggers new movie to be added -->
+      <input id="add-movie" type="submit" value="Add a Movie, Yo!">
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // Initial array of movies
+      var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"], set = false;
+      var queryURL = "https://www.omdbapi.com/?t=" + movies + "&apikey=trilogy";
+      // Function for displaying movie data
+      function renderButtons() {
+        $("#buttons-view").empty();
+        var queryURL = "https://www.omdbapi.com/?t=" + movies[i] + "&apikey=trilogy";
+        for (var i = 0; i < movies.length; i++) {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function (response) {
+            var a = $("<button>");
+            a.addClass("movie");
+            a.attr("data-name", response.title);
+            a.text(movies[i]);
+            $(".buttons-view").append(a);
+          });
+        }
+      };
+
+
+      // This function handles events where one button is clicked
+      $("#add-movie").on("click", function () {
+        event.preventDefault();
+        var movie = $("#movie-input").val().trim();
+        movies.push(movie);
+
+        // YOUR CODE GOES HERE
+        renderButtons();
+      });
+
+      // Calling the renderButtons function to display the initial list of movies
+      renderButtons();
+    </script>
+  </div>
+</body>
+
+</html>

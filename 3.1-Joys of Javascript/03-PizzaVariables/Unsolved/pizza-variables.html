@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza Variables - Unsolved</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    // Instructions:
+    // Create 3 variables. One called: "name", one called "pizzaCount", and one called "isHungry".
+    // The name variable should be set to your name.
+    // The pizzaCount variable should be set to a number.
+    // The isHungry variable should be set to true or false.
+
+    // FILL IN YOUR CODE HERE
+    // =============================================
+    // var name = 'Justin';
+
+    var name=prompt('Please enter your name: ','John Smith');
+    var pizzaCount = prompt('How many pizzas will you be purchasing?')
+    var isHungry;
+
+    // ==============================================
+
+
+    // Don't touch this code :-)
+    var totalCost = pizzaCount * 5.25;
+
+    alert("Welcome " + name + '!');
+
+    alert("Pizzas cost $5.25 each. You are buying:" + pizzaCount);
+
+    alert("Your total is: $" + totalCost);
+
+    if (pizzaCount < 15) {
+      isHungry=true;
+      alert("Still Hungry: " + isHungry);
+      alert("Add more Pizza! Currently adding more pizza!");
+      pizzaCount + 1;
+    }
+    else {
+      isHungry=false;
+      alert('You\'re full! Good job')
+    }
+
+  </script>
+
+</body>
+
+</html>
