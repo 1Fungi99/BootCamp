@@ -13,8 +13,16 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     }
   });
-
   // Add a belongsTo association to Authors here
   // Example: https://github.com/sequelize/express-example/blob/master/models/task.js
+  Post.associate = function (models){
+    models.Post.belongsTo(models.Post, {
+      onDelete: "CASCADE",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
+
   return Post;
 };
