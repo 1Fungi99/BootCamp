@@ -1,0 +1,17 @@
+use classroom
+
+db.classmates
+
+db.classmates.insert({'name':'Mike','position':'0,1'})
+db.classmates.insert({'name':'Emir','position':'0,4'})
+db.classmates.insert({'name':'Jaylah','position':'0,5'})
+
+db.classmates.insert({'name':'Nancy', 'position':'1,1'})
+db.classmates.insert({'name':'Justin','position':'1,5'})
+db.classmates.insert({'name':'Axel','position':'1,6'})
+
+=== OR ===
+
+db.classroom.insertMany([{'name':'Mike','position':'0,1'},{'name':'Emir','position':'0,4'},{'name':'Jaylah','position':'0,5'},{'name':'Nancy', 'position':'1,1'},{'name':'Justin','position':'1,5'},{'name':'Axel','position':'1,6'}])
+
+db.classmates.find().pretty() 

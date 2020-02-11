@@ -1,0 +1,5 @@
+use lessondb
+
+db.places
+
+db.places.insert({"continent" : "Africa", "country" : "Moroco", "majorcities" : ["CasaBlanca", "Fez","Tangir","Marraketch"});
